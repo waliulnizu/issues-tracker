@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="flex flex-col md:flex-row justify-between items-center p-4 bg-base-100 shadow">
+        <div class="flex items-center gap-3">
+            <img src="./images/github-logo.jpg" alt="github logo" class="w-12 h-12 rounded-full" />
+            <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+        </div>
+
+        <div class="flex items-center gap-2 mt-4 md:mt-0 w-full max-w-md">
+            <input type="search" placeholder="Search issues..." class="input input-bordered w-full" id="searchInput" />
+            <button class="btn btn-primary">Search</button>
+        </div>
+    </header>
+
+    <section>
+        <div class="container mx-auto">
+            <div class="flex flex-wrap gap-4 p-4 bg-base-200 rounded-md">
+                <button id="filter-all" class="btn btn-primary px-6">All</button>
+                <button id="filter-open" class="btn btn-outline px-6">Open</button>
+                <button id="filter-closed" class="btn btn-outline px-6">Closed</button>
+                <button class="btn btn-secondary ml-auto">+ New Issue</button>
+            </div>
+
+            <div id="counts" class="flex flex-col md:flex-row justify-between gap-4 p-4 bg-base-200 rounded-md mt-8">
+                <div>
+                    <h2 id="total-count" class="text-xl font-semibold">0 Issues</h2>
+                    <p class="text-sm text-gray-600">Track and manage your project issues</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span id="open-count" class="text-green-600 font-semibold">● Open</span>
+                    <span id="closed-count" class="text-purple-600 font-semibold">● Closed</span>
+                </div>
+            </div>
+            <hr class="my-4 border-gray-300">
+
+            <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- issue card template -->
+                
+                
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+        // redirect to login if not logged in
+        if (!localStorage.getItem('isAuthenticated')) {
+          window.location.href = 'login.html';
+        }
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
