@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login issues tracker</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+     <div class="flex h-screen items-center justify-center bg-base-200">
+        <div class="card w-full max-w-md bg-base-100 shadow-xl p-8">
+            <div class="flex flex-col items-center">
+                <!-- logo (GitHub icon) -->
+                <img src="./images/github-logo.jpg" alt="github logo" class="w-36 h-36 rounded-full mb-4" />
+                <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+                <p class="text-sm text-gray-600 mt-1">Sign in to manage your issues</p>
+            </div>
+            <form id="loginForm" class="mt-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="username">Username</label>
+                    <input id="username" name="username" type="text" placeholder="Enter Username" class="input input-bordered w-full" />
+                    <p class="text-xs text-purple-600 mt-1">Default: admin</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Enter Password" class="input input-bordered w-full" />
+                    <p class="text-xs text-purple-600 mt-1">Default: admin123</p>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Sign In</button>
+            </form>
+            <div class="divider">OR</div>
+            <div class="text-center text-sm text-gray-600">Demo Credentials:</div>
+            <div class="mt-2 p-4 bg-gray-100 rounded">
+                <p><strong>Username:</strong> admin</p>
+                <p><strong>Password:</strong> admin123</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+</body>
+</html>
