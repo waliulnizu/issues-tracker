@@ -4,6 +4,8 @@ fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     console.log(result);
 
     const cardsContainer = document.getElementById('cards');
+    // make issues available to filters.js
+    window.allIssues = result.data;
 
     const labelClass = (label) => {
       switch (label.toLowerCase()) {
@@ -63,9 +65,16 @@ fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
       `;
       cardsContainer.appendChild(card);
     };
+    // expose createCard to other modules
+    window.createCard = createCard;
 
     // render all issues without filters
     result.data.forEach(createCard);
+
+    // let filter module attach its listeners if loaded
+    if (typeof initializeFilters === 'function') {
+      initializeFilters(window.allIssues);
+    }
 
   })
   .catch(error => console.error('Error fetching issues:', error));
