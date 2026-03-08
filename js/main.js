@@ -75,6 +75,9 @@ fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     if (typeof initializeFilters === 'function') {
       initializeFilters(window.allIssues);
     }
+    if (typeof initializeSearch === 'function') {
+      initializeSearch(window.allIssues);
+    }
 
   })
   .catch(error => console.error('Error fetching issues:', error));
