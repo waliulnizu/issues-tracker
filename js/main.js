@@ -40,6 +40,7 @@ fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
       }
 
       card.className = `card bg-white shadow rounded-2xl p-6 flex flex-col justify-between ${statusBorderClass}`;
+      card.dataset.issueId = issue.id;
       card.innerHTML = `
         <div class="relative">
             <span class="absolute top-0 right-0 text-xs font-bold uppercase px-2 py-1 ${priorityBadgeClass} rounded-bl-lg">
@@ -77,6 +78,9 @@ fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     }
     if (typeof initializeSearch === 'function') {
       initializeSearch(window.allIssues);
+    }
+    if (typeof initializeModal === 'function') {
+      initializeModal(window.allIssues);
     }
 
   })

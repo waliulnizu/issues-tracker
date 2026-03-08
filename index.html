@@ -43,8 +43,18 @@
 
             <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- issue card template -->
-                
-                
+            </div>
+
+            <!-- modal container -->
+            <div id="issueModal" class="modal">
+              <div class="modal-box">
+                <h3 id="modalTitle" class="text-lg font-bold"></h3>
+                <p id="modalDescription" class="py-4"></p>
+                <div id="modalLabels" class="flex flex-wrap gap-2 mb-4"></div>
+                <div class="modal-action">
+                  <button class="btn" id="closeModalBtn">Close</button>
+                </div>
+              </div>
             </div>
 
 
@@ -60,5 +70,6 @@
     <script src="./js/main.js"></script>
     <script src="./js/filters.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
