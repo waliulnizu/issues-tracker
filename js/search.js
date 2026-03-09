@@ -7,12 +7,12 @@ function initializeSearch(issues) {
   const cardsContainer = document.getElementById('cards');
 
   const performSearch = () => {
+    showSpinner();
     const q = searchInput.value.trim().toLowerCase();
-    // clear current cards
     cardsContainer.innerHTML = '';
     if (!q) {
-      // render all again
       issues.forEach(i => window.createCard(i));
+      hideSpinner();
       return;
     }
     const matches = issues.filter(i => {
@@ -21,6 +21,7 @@ function initializeSearch(issues) {
              (i.labels && i.labels.some(l => l.toLowerCase().includes(q)));
     });
     matches.forEach(i => window.createCard(i));
+    hideSpinner();
   };
 
   if (searchButton) {

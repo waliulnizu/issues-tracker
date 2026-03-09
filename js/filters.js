@@ -35,12 +35,12 @@ function initializeFilters(issues) {
   };
 
   const renderCards = (filter) => {
+    showSpinner();
     clearCards();
     let filtered = issues;
     if (filter === 'open') filtered = issues.filter(i => i.status === 'open');
     if (filter === 'closed') filtered = issues.filter(i => i.status === 'closed');
     filtered.forEach(i => {
-      // call same createCard logic from main (assumes global function exist or duplicate?)
       if (typeof window.createCard === 'function') {
         window.createCard(i);
       }
@@ -48,6 +48,7 @@ function initializeFilters(issues) {
     highlightButton(`filter-${filter}`);
     updateCounts();
     if (totalCountEl) totalCountEl.textContent = `${filtered.length} Issues`;
+    hideSpinner();
   };
 
   // wire buttons
